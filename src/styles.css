@@ -1,0 +1,115 @@
+body {
+  background: linear-gradient(135deg, #ffd5c2, #ff9f80);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  font-family: Helvetica, Arial, sans-serif;
+}
+header {
+  margin-bottom: 30px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 1.5;
+  color: #272044;
+}
+
+form {
+  padding: 30px;
+  background-color: white;
+  box-shadow: 0px 20px 60px rgba(65, 50, 100, 0.08);
+  border-radius: 10px;
+  display: flex;
+  margin-bottom: 30px;
+}
+.flower-container {
+  margin: 120px auto;
+  max-width: 600px;
+}
+.instructions {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  border: 1px solid #ff9f80;
+  border-radius: 5px;
+  background-color: #fff5f2;
+  color: #5a2a27;
+}
+
+.submit-button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #ff7f50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.submit-button:hover {
+  background-color: #ff6347;
+}
+.poem {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #8c3b35;
+  background-color: #fff5f2;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+footer a {
+  color: #ff6347;
+  text-decoration: none;
+  font-weight: bold;
+}
+footer a:hover {
+  color: #ff7f50;
+}
+
+.flower {
+  position: fixed;
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+  animation: fall 10s linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Diferentes colores para las flores */
+.flower:nth-child(2n) {
+  color: #ff69b4;
+}
+.flower:nth-child(3n) {
+  color: #ff1493;
+}
+.flower:nth-child(4n) {
+  color: #ff6347;
+}
+
+/* Diferentes velocidades y trayectorias */
+.flower:nth-child(2n) {
+  animation-duration: 12s;
+}
+.flower:nth-child(3n) {
+  animation-duration: 15s;
+}
+.flower:nth-child(4n) {
+  animation-duration: 18s;
+}
