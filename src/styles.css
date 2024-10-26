@@ -26,10 +26,7 @@ form {
   display: flex;
   margin-bottom: 30px;
 }
-.flower-container {
-  margin: 120px auto;
-  max-width: 600px;
-}
+
 .instructions {
   width: 80%;
   padding: 10px;
