@@ -28,19 +28,32 @@ function startFlowers() {
   }
 }
 
-// Start effect when page loads
-window.onload = startFlowers;
-
-function generatePoem(event) {
-  event.preventDefault();
-
+function displayPoem(response) {
+  console.log("entro aqui");
+  console.log(response.data);
   new Typewriter("#poem", {
-    strings: "La tomba dice alla rosa",
+    strings: response.data.answer,
     autoStart: true,
     delay: 1,
     cursor: "",
   });
 }
 
+function generatePoem(event) {
+  event.preventDefault();
+
+  let instructionsInput = document.querySelector("#user-instructions");
+  let apiKey = "eaf3cd516tefa3421cb01712o34b3a18";
+  let prompt =
+    "You are an expert in romantic poems and love writing short poems. Your mission is to generate a 4-5 line poem and separate each line with a <br />. Make sure to follow the user instructions. Do not include a title in the poem. Sign the poem with 'SheCodes AI' inside a <strong> element at the end of the poem and NOT at the beginning.";
+  let context = `User instructions: Generate a Italian poem about ${instructionsInput.value}`;
+  let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+
+  axios.get(apiUrl).then(displayPoem);
+}
+
 let poemFormElement = document.querySelector("#poem-generator-form");
 poemFormElement.addEventListener("submit", generatePoem);
+
+// Start effect when page loads
+window.onload = startFlowers;
