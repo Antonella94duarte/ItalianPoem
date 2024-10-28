@@ -61,10 +61,12 @@ form {
   border-radius: 5px;
   margin: 20px 0;
 }
+
 footer a {
   color: #ff6347;
   text-decoration: none;
   font-weight: bold;
+  text-align: center;
 }
 footer a:hover {
   color: #ff7f50;
@@ -76,6 +78,21 @@ footer a:hover {
   width: 20px;
   height: 20px;
   animation: fall 10s linear infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+.poem strong {
+  color: #885df1;
+}
+
+.hint {
+  line-height: 1.5;
+  margin-top: 5px;
+  opacity: 0.6;
+  font-size: 12px;
 }
 
 @keyframes fall {
